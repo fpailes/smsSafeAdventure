@@ -2,17 +2,16 @@ import os
 import twilio
 from twilio.rest import Client
 
-account_sid = os.environ['ACf3da6c862b2b0b546088c178c6354a14']
+account_sid = os.environ['TWILIO_ACCOUNT_SID']
+account_authtoken = os.environ['TWILIO_AUTH_TOKEN']
+client = Client(account_sid, account_authtoken)
 
-account_authtoken = os.environ['14bcdabb1d104fbf8acdfca27e35df3c']
-client = Client(accout_sid, account_authtoken)
 
-
-def sendMsg(msg, reciepient):
+def send_msg(msg, reciepient):
     message = client.messages \
     .create(
         body = msg,
-        from_ = +12055573376,
+        from_ = '+12055573376',
         to = reciepient
     )
     return message
@@ -20,6 +19,6 @@ def sendMsg(msg, reciepient):
 
 
 # TESTING
-sendSMS("Testing", 9786210713)
+sendMsg("sup dad", '9787613364')
 
 
