@@ -19,6 +19,6 @@ def send_msg(msg, reciepient):
 
 
 # TESTING
-send_msg("sup dad", '9787613364')
+send_msg("testing", '9786210713')
 
 
